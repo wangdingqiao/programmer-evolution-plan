@@ -1,0 +1,140 @@
+1.第一种
+头文件
+
+#ifndef _TEMPLATE_EXAMPLE_PAIR_H_
+#define _TEMPLATE_EXAMPLE_PAIR_H_
+
+#include <iostream>
+
+template<typename T, typename U> struct Pair;
+template<typename T, typename U>
+std::ostream& operator << (std::ostream& stream, const Pair<T, U>& p);
+
+template<typename T, typename U>
+struct Pair
+{
+	T first;
+	U second;
+	Pair(const T& t, const U& u);
+	Pair(const Pair& p);
+	Pair& operator=(Pair p);
+	void swap(Pair<T,U>& p1, Pair<T,U>& p2);
+	friend std::ostream& operator << <T, U>(std::ostream& stream, const Pair<T, U>& p);
+};
+
+#define _TEMPLATE_EXAMPLE_PAIR_CPP_
+#include "template-compile-separate-1.cpp"
+#endif
+
+实现文件:
+#ifdef _TEMPLATE_EXAMPLE_PAIR_CPP_
+#include <algorithm>
+
+template<typename T, typename U> Pair<T,U>::Pair(const T& t, const U& u)
+:first(t), second(u)
+{
+
+}
+
+template<typename T, typename U>  Pair<T,U>::Pair(const Pair& p)
+: first(p.first), second(p.second) 
+{
+
+}
+
+template<typename T, typename U> Pair<T,U>&  Pair<T,U>::operator=(Pair p)
+{
+	swap(*this, p);
+	return *this;
+}
+
+template<typename T, typename U> void  Pair<T,U>::swap(Pair<T,U>& p1, Pair<T,U>& p2)
+{
+	using std::swap;
+	std::swap(p1.first, p2.first);
+	std::swap(p1.second, p2.second);
+}
+
+template<typename T, typename U>
+std::ostream& operator << (std::ostream& stream, const Pair<T, U>& p)
+{
+	return stream << "(" << p.first << "," << p.second << ")";
+}
+#endif
+
+测试文件:
+#include <iostream>
+#include <string>
+#include "template-compile-separate-1.h"
+
+int main()
+{
+	//....
+}
+
+
+2.第二种
+
+头文件
+
+#ifndef _TEMPLATE_EXAMPLE_PAIR_H_
+#define _TEMPLATE_EXAMPLE_PAIR_H_
+
+#include <iostream>
+
+template<typename T, typename U> struct Pair;
+template<typename T, typename U>
+std::ostream& operator << (std::ostream& stream, const Pair<T, U>& p);
+
+template<typename T, typename U>
+struct Pair
+{
+	T first;
+	U second;
+	Pair(const T& t, const U& u);
+	Pair(const Pair& p);
+	Pair& operator=(Pair p);
+	void swap(Pair<T,U>& p1, Pair<T,U>& p2);
+	friend std::ostream& operator << <T, U>(std::ostream& stream, const Pair<T, U>& p);
+};
+
+#include "template-compile-separate-1.hpp"
+#endif
+
+实现文件:template-compile-separate-1.hpp 
+#include <algorithm>
+
+template<typename T, typename U> Pair<T,U>::Pair(const T& t, const U& u)
+:first(t), second(u)
+{
+
+}
+
+template<typename T, typename U>  Pair<T,U>::Pair(const Pair& p)
+: first(p.first), second(p.second) 
+{
+
+}
+
+template<typename T, typename U> Pair<T,U>&  Pair<T,U>::operator=(Pair p)
+{
+	swap(*this, p);
+	return *this;
+}
+
+template<typename T, typename U> void  Pair<T,U>::swap(Pair<T,U>& p1, Pair<T,U>& p2)
+{
+	using std::swap;
+	std::swap(p1.first, p2.first);
+	std::swap(p1.second, p2.second);
+}
+
+template<typename T, typename U>
+std::ostream& operator << (std::ostream& stream, const Pair<T, U>& p)
+{
+	return stream << "(" << p.first << "," << p.second << ")";
+}
+
+注意：将这个文件从工程中排除，后缀为hpp，区分cpp文件。
+
+测试文件同上。

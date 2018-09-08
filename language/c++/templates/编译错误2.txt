@@ -1,0 +1,97 @@
+#include <iostream>
+#include <algorithm>
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
+#include <assert.h>     /* assert */
+#include <string>
+
+template<class T> class DoubleQueue; // 模板类的前向声明
+
+template<typename T>
+class DoubleLinkListNode
+{
+private:
+	T data;
+	DoubleLinkListNode* prev;
+	DoubleLinkListNode* next;
+	DoubleLinkListNode(const T& data, DoubleLinkListNode* prev, DoubleLinkListNode* next)
+		:data(data), prev(prev), next(next){}   // 构造函数和拷贝构造函数中不必带上类型声明
+	friend class DoubleQueue<T>;  // 声明模板类为友元
+	// 输出流操作符重载 并声明为友元模板函数
+	friend std::ostream& operator << (std::ostream& stream, const DoubleLinkListNode<T>& node);
+	// 同时要将接受DoubleQueue类型的流操作符 声明为友元函数
+	friend std::ostream& operator << (std::ostream& stream, const DoubleQueue<T>& node);
+};
+
+template<typename T> std::ostream& operator << (std::ostream& stream, const DoubleLinkListNode<T>& node)
+{
+	stream << node.data;
+	return stream;
+}
+
+
+template<typename T>
+class DoubleQueue
+{
+public:
+	DoubleQueue():_head(NULL),_tail(NULL),_size(0) {}
+	~DoubleQueue()
+	{
+		clear();
+	}
+	DoubleQueue(const DoubleQueue& other):_head(NULL),_tail(NULL),_size(0)
+	{
+		DoubleLinkListNode<T>* p = other._head;
+		while(p)
+		{
+			push_back(p->data);
+			p = p->next;
+		}
+	}
+	DoubleQueue<T>& operator=(DoubleQueue other)  // 注意参数类型为值传递 非引用传递
+	{
+		swap(*this, other);
+		return *this;
+	}
+	friend void swap(DoubleQueue<T>& one, DoubleQueue<T>& other) // 注意参数为非常量引用类型
+	{
+		using std::swap;
+		std::swap(one._head, other._head);
+		std::swap(one._tail, other._tail);
+		std::swap(one._size, other._size);
+	}
+	friend std::ostream& operator<<(std::ostream& stream, const DoubleQueue<T>& list);
+    // ...
+private:
+	DoubleLinkListNode<T> *_head, *_tail;
+	std::size_t _size;
+};
+
+template<typename T> std::ostream& operator<<(std::ostream& stream, const DoubleQueue<T>& list)
+{
+	stream << "DoubleQueue[";
+	DoubleLinkListNode<T>* p = list._head;
+	while(p)
+	{
+		stream << *p << ",";  // node重载了流操作符
+		p = p->next;
+	}
+	stream << "]";
+	return stream;
+}
+
+
+// 编译错误如下:
+
+template-queue-3.obj : error LNK2019: 无法解析的外部符号 "class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl
+operator<<(class std::basic_ostream<char,struct std::char_traits<char> > &,class DoubleQueue<int> const &)" (??6@YAAAV?$basic_ostr
+eam@DU?$char_traits@D@std@@@std@@AAV01@ABV?$DoubleQueue@H@@@Z)，该符号在函数 _main 中被引用
+template-queue-3.obj : error LNK2019: 无法解析的外部符号 "class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl
+operator<<(class std::basic_ostream<char,struct std::char_traits<char> > &,class DoubleQueue<class std::basic_string<char,struct s
+td::char_traits<char>,class std::allocator<char> > > const &)" (??6@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@std@@AAV01@ABV?$D
+oubleQueue@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z)，该符号在函数 _main 中被引用
+template-queue-3.exe : fatal error LNK1120: 2 个无法解析的外部命令
+
+// 解决方法
+上面的错误为，没有为DoubleQueue<int>和DoubleQueue<std::string>提供输出流重载实现。
+当输出流操作符在类外部实现时，需要首先声明为函数模板，然后在类内部声明为友元函数。具体操作见类的实现文件template-queue-3.cpp.

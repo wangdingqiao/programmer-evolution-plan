@@ -1,0 +1,94 @@
+#include <iostream>
+#include <algorithm>
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
+#include <assert.h>     /* assert */
+#include <string>
+
+template<class T> class DoubleQueue; // 模板类的前向声明
+
+template<typename T>
+class DoubleLinkListNode
+{
+private:
+	T data;
+	DoubleLinkListNode* prev;
+	DoubleLinkListNode* next;
+	DoubleLinkListNode(const T& data, DoubleLinkListNode* prev, DoubleLinkListNode* next)
+		:data(data), prev(prev), next(next){}   // 构造函数和拷贝构造函数中不必带上类型声明
+	friend class DoubleQueue<T>;  // 声明模板类为友元
+	// 输出流操作符重载 并声明为友元模板函数
+	friend std::ostream& operator << (std::ostream& stream, const DoubleLinkListNode<T>& node)
+	{
+		stream << node.data;
+		return stream;
+	}
+};
+
+template<typename T>
+class DoubleQueue
+{
+public:
+	DoubleQueue():_head(NULL),_tail(NULL),_size(0) {}
+	~DoubleQueue()
+	{
+		clear();
+	}
+	DoubleQueue(const DoubleQueue& other):_head(NULL),_tail(NULL),_size(0)
+	{
+		DoubleLinkListNode<T>* p = other._head;
+		while(p)
+		{
+			push_back(p->data);
+			p = p->next;
+		}
+	}
+	DoubleQueue<T>& operator=(DoubleQueue other)  // 注意参数类型为值传递 非引用传递
+	{
+		swap(*this, other);
+		return *this;
+	}
+	friend void swap(DoubleQueue<T>& one, DoubleQueue<T>& other) // 注意参数为非常量引用类型
+	{
+		using std::swap;
+		std::swap(one._head, other._head);
+		std::swap(one._tail, other._tail);
+		std::swap(one._size, other._size);
+	}
+	friend std::ostream& operator<<(std::ostream& stream, const DoubleQueue<T>& list)
+	{
+		stream << "DoubleQueue[";
+		DoubleLinkListNode<T>* p = list._head;
+		while(p)
+		{
+			stream << p << ",";  // node重载了流操作符
+			p = p->next;
+		}
+		stream << "]";
+		return stream;
+	}
+	// ...
+private:
+	DoubleLinkListNode<T> *_head, *_tail;
+	std::size_t _size;
+};
+
+// 编译错误:
+template-queue-2.cpp
+template-queue-2.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+template-queue-2.cpp(65) : error C2248: “DoubleLinkListNode<T>::next”: 无法访问 private 成员(在“DoubleLinkListNode<T>”类中声明
+)
+        with
+        [
+            T=int
+        ]
+        template-queue-2.cpp(16) : 参见“DoubleLinkListNode<T>::next”的声明
+        with
+        [
+            T=int
+        ]
+        template-queue-2.cpp(59): 编译类 模板 成员函数“std::ostream &operator <<(std::ostream &,const DoubleQueue<int> &)”时
+        template-queue-2.cpp(176): 参见对正在编译的类 模板 实例化“DoubleQueue<int>”的引用
+
+// 解决方法
+将friend std::ostream& operator<<(std::ostream& stream, const DoubleQueue<T>& list) 声明为DoubleLinkListNode的友元。
