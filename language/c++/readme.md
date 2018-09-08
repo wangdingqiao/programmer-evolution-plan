@@ -11,4 +11,4 @@
 - [类中的函数](https://github.com/wangdingqiao/programmer-evolution-plan/tree/master/language/c%2B%2B/functions-with-class)
 - [虚函数](https://github.com/wangdingqiao/programmer-evolution-plan/tree/master/language/c%2B%2B/virtual)
 - [面向对象编程](https://github.com/wangdingqiao/programmer-evolution-plan/tree/master/language/c%2B%2B/OOP)
-- [模板和范型](https://github.com/wangdingqiao/programmer-evolution-plan/tree/master/language/c%2B%2B/templates)
+- [模板](https://github.com/wangdingqiao/programmer-evolution-plan/tree/master/language/c%2B%2B/templates)
