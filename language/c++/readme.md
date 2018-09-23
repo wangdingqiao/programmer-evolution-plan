@@ -175,6 +175,17 @@
 - [When to use template vs inheritance](https://stackoverflow.com/questions/7264402/when-to-use-template-vs-inheritance)
 
 
+## STL(Standard Template Library)
+
+- [The Standard Template Library](https://www.learncpp.com/cpp-tutorial/16-1-the-standard-template-library-stl/)
+- [A modest STL tutorial](http://cs.brown.edu/~jak/proglang/cpp/stltut/tut.html)
+- [An Introduction to the Standard Template Library (STL)](https://cal-linux.com/tutorials/STL.html)
+- [The Standard Template Library Tutorial](http://www.cmapx.polytechnique.fr/~benaych/stl-tutorial-Weidl.pdf)
+- [Why std::set is an associative container](https://stackoverflow.com/questions/25071335/why-stdset-is-an-associative-container)
+- [C++ Standard Template Library Part III - Algorithms](https://www.quantstart.com/articles/C-Standard-Template-Library-Part-III-Algorithms#)
+- [Algorithms library](https://en.cppreference.com/w/cpp/algorithm)
+- [Functors: Function Objects in C++](https://www.cprogramming.com/tutorial/functors-function-objects-in-c++.html)
+
 ## 其他问题
 
 - [What is “Argument-Dependent Lookup” (aka ADL, or “Koenig Lookup”)?](https://stackoverflow.com/questions/8111677/what-is-argument-dependent-lookup-aka-adl-or-koenig-lookup)
