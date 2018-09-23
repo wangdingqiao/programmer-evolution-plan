@@ -185,6 +185,8 @@
 - [C++ Standard Template Library Part III - Algorithms](https://www.quantstart.com/articles/C-Standard-Template-Library-Part-III-Algorithms#)
 - [Algorithms library](https://en.cppreference.com/w/cpp/algorithm)
 - [Functors: Function Objects in C++](https://www.cprogramming.com/tutorial/functors-function-objects-in-c++.html)
+- [What are C++ functors and their uses?](https://stackoverflow.com/questions/356950/what-are-c-functors-and-their-uses)
+
 
 ## 其他问题
 
