@@ -187,6 +187,11 @@
 - [Functors: Function Objects in C++](https://www.cprogramming.com/tutorial/functors-function-objects-in-c++.html)
 - [What are C++ functors and their uses?](https://stackoverflow.com/questions/356950/what-are-c-functors-and-their-uses)
 
+## Allocator
+- [C++ Standard Allocator, An Introduction and Implementation](https://www.codeproject.com/Articles/4795/C-Standard-Allocator-An-Introduction-and-Implement)
+- [The Standard Librarian: What Are Allocators Good For?](http://www.drdobbs.com/the-standard-librarian-what-are-allocato/184403759)
+- [Allocators (STL)](https://www.codeguru.com/cpp/cpp/cpp_mfc/stl/article.php/c4079/Allocators-STL.htm)
+
 
 ## 其他问题
 
