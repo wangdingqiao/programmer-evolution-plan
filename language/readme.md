@@ -6,3 +6,6 @@
 
 
 这里重点学习了C++，Python语言。对他们的重难点进行了梳理，并没有包含全部细节。细节部分可以在需要时查阅相关教材或者网络教程。
+笔者总结，学习语言的方法，如下:
+
+- [语言学习方法](https://github.com/wangdingqiao/programmer-evolution-plan/blob/master/language/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95.png)
