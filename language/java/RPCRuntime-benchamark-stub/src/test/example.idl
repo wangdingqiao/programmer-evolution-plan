@@ -1,0 +1,36 @@
+package com.my.rpc.testMessage;
+
+messageBlock MessageBeerArray
+{
+	message BeerSort
+	{
+		seq<string> names;
+	};
+	
+	message Beer
+	{
+		string Brand;
+	    BeerSort Sort;
+		float Alcohol;
+	    string Brewery;
+	};
+	
+	message BeerArray
+	{
+		seq<Beer> beers;
+	};
+	
+	message BeerMap
+	{
+		map<string, BeerArray> beers;
+	};
+};
+
+interface IBeerQuery
+{
+	BeerArray queryBeers(float param1, string param2, RPCCommonMessage.SeqString param3, RPCCommonMessage.MapStrInt param4, binary param5, RPCCommonMessage.SeqInt param6) = 1;
+	
+	BeerArray queryBeers2(float param1, string param2, RPCCommonMessage.SeqString param3) = 2;
+	
+	BeerArray queryBeers3(float param1, string param2, RPCCommonMessage.SeqString param3, RPCCommonMessage.MapStrInt param4) = 3;
+};

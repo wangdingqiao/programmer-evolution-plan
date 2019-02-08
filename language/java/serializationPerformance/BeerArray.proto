@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package tutorial;
+
+option java_package = "com.learningjava.serializationPerformance.tester";
+option java_outer_classname = "BeerArrayProtos";
+
+message BeerSort 
+{
+	repeated string names = 1;
+}
+message Beer
+ {
+  	required string Brand = 1;
+  	required BeerSort Sort = 2;
+  	required float Alcohol = 3;
+  	required string Brewery = 4;
+}
+message BeerArray 
+{
+  repeated Beer beers = 1;
+}

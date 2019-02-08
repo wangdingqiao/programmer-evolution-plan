@@ -1,0 +1,590 @@
+# JMH version: 1.21
+# VM version: JDK 1.8.0_201, Java HotSpot(TM) 64-Bit Server VM, 25.201-b09
+# VM invoker: C:\Program Files\Java\jre1.8.0_201\bin\java.exe
+# VM options: -Xms2G -Xmx2G
+# Warmup: 15 iterations, 500 ms each
+# Measurement: 30 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 3 threads (1 group; 1x "queryBeers", 1x "queryBeers2", 1x "queryBeers3" in each group), will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.mixOper
+
+# Run progress: 0.00% complete, ETA 00:01:30
+# Fork: 1 of 1
+# Warmup Iteration   1: ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
+BenchmarkMain setup done.
+BenchmarkMain setup done.
+BenchmarkMain setup done.
+0.707 ops/ms
+# Warmup Iteration   2: 0.811 ops/ms
+# Warmup Iteration   3: 0.934 ops/ms
+# Warmup Iteration   4: 1.400 ops/ms
+# Warmup Iteration   5: 1.619 ops/ms
+# Warmup Iteration   6: 1.428 ops/ms
+# Warmup Iteration   7: 1.615 ops/ms
+# Warmup Iteration   8: 1.685 ops/ms
+# Warmup Iteration   9: 1.812 ops/ms
+# Warmup Iteration  10: 1.992 ops/ms
+# Warmup Iteration  11: 1.888 ops/ms
+# Warmup Iteration  12: 2.002 ops/ms
+# Warmup Iteration  13: 1.840 ops/ms
+# Warmup Iteration  14: 1.882 ops/ms
+# Warmup Iteration  15: 1.963 ops/ms
+Iteration   1: 1.991 ops/ms
+                 queryBeers:  0.664 ops/ms
+                 queryBeers2: 0.664 ops/ms
+                 queryBeers3: 0.663 ops/ms
+
+Iteration   2: 1.630 ops/ms
+                 queryBeers:  0.546 ops/ms
+                 queryBeers2: 0.544 ops/ms
+                 queryBeers3: 0.540 ops/ms
+
+Iteration   3: 1.935 ops/ms
+                 queryBeers:  0.644 ops/ms
+                 queryBeers2: 0.645 ops/ms
+                 queryBeers3: 0.645 ops/ms
+
+Iteration   4: 1.981 ops/ms
+                 queryBeers:  0.660 ops/ms
+                 queryBeers2: 0.659 ops/ms
+                 queryBeers3: 0.661 ops/ms
+
+Iteration   5: 1.824 ops/ms
+                 queryBeers:  0.607 ops/ms
+                 queryBeers2: 0.610 ops/ms
+                 queryBeers3: 0.608 ops/ms
+
+Iteration   6: 1.985 ops/ms
+                 queryBeers:  0.662 ops/ms
+                 queryBeers2: 0.660 ops/ms
+                 queryBeers3: 0.663 ops/ms
+
+Iteration   7: 2.012 ops/ms
+                 queryBeers:  0.671 ops/ms
+                 queryBeers2: 0.671 ops/ms
+                 queryBeers3: 0.670 ops/ms
+
+Iteration   8: 1.943 ops/ms
+                 queryBeers:  0.648 ops/ms
+                 queryBeers2: 0.647 ops/ms
+                 queryBeers3: 0.648 ops/ms
+
+Iteration   9: 1.840 ops/ms
+                 queryBeers:  0.614 ops/ms
+                 queryBeers2: 0.612 ops/ms
+                 queryBeers3: 0.614 ops/ms
+
+Iteration  10: 1.770 ops/ms
+                 queryBeers:  0.588 ops/ms
+                 queryBeers2: 0.589 ops/ms
+                 queryBeers3: 0.593 ops/ms
+
+Iteration  11: 2.062 ops/ms
+                 queryBeers:  0.687 ops/ms
+                 queryBeers2: 0.688 ops/ms
+                 queryBeers3: 0.687 ops/ms
+
+Iteration  12: 2.057 ops/ms
+                 queryBeers:  0.685 ops/ms
+                 queryBeers2: 0.686 ops/ms
+                 queryBeers3: 0.686 ops/ms
+
+Iteration  13: 1.972 ops/ms
+                 queryBeers:  0.655 ops/ms
+                 queryBeers2: 0.660 ops/ms
+                 queryBeers3: 0.657 ops/ms
+
+Iteration  14: 2.028 ops/ms
+                 queryBeers:  0.676 ops/ms
+                 queryBeers2: 0.676 ops/ms
+                 queryBeers3: 0.676 ops/ms
+
+Iteration  15: 2.051 ops/ms
+                 queryBeers:  0.684 ops/ms
+                 queryBeers2: 0.684 ops/ms
+                 queryBeers3: 0.684 ops/ms
+
+Iteration  16: 1.996 ops/ms
+                 queryBeers:  0.664 ops/ms
+                 queryBeers2: 0.666 ops/ms
+                 queryBeers3: 0.665 ops/ms
+
+Iteration  17: 2.002 ops/ms
+                 queryBeers:  0.667 ops/ms
+                 queryBeers2: 0.667 ops/ms
+                 queryBeers3: 0.667 ops/ms
+
+Iteration  18: 1.622 ops/ms
+                 queryBeers:  0.540 ops/ms
+                 queryBeers2: 0.542 ops/ms
+                 queryBeers3: 0.540 ops/ms
+
+Iteration  19: 2.036 ops/ms
+                 queryBeers:  0.679 ops/ms
+                 queryBeers2: 0.678 ops/ms
+                 queryBeers3: 0.679 ops/ms
+
+Iteration  20: 2.035 ops/ms
+                 queryBeers:  0.682 ops/ms
+                 queryBeers2: 0.670 ops/ms
+                 queryBeers3: 0.683 ops/ms
+
+Iteration  21: 2.062 ops/ms
+                 queryBeers:  0.687 ops/ms
+                 queryBeers2: 0.687 ops/ms
+                 queryBeers3: 0.688 ops/ms
+
+Iteration  22: 1.725 ops/ms
+                 queryBeers:  0.577 ops/ms
+                 queryBeers2: 0.571 ops/ms
+                 queryBeers3: 0.576 ops/ms
+
+Iteration  23: 1.894 ops/ms
+                 queryBeers:  0.631 ops/ms
+                 queryBeers2: 0.629 ops/ms
+                 queryBeers3: 0.633 ops/ms
+
+Iteration  24: 2.035 ops/ms
+                 queryBeers:  0.678 ops/ms
+                 queryBeers2: 0.678 ops/ms
+                 queryBeers3: 0.679 ops/ms
+
+Iteration  25: 2.042 ops/ms
+                 queryBeers:  0.681 ops/ms
+                 queryBeers2: 0.681 ops/ms
+                 queryBeers3: 0.680 ops/ms
+
+Iteration  26: 2.044 ops/ms
+                 queryBeers:  0.679 ops/ms
+                 queryBeers2: 0.683 ops/ms
+                 queryBeers3: 0.682 ops/ms
+
+Iteration  27: 1.893 ops/ms
+                 queryBeers:  0.632 ops/ms
+                 queryBeers2: 0.633 ops/ms
+                 queryBeers3: 0.628 ops/ms
+
+Iteration  28: 2.067 ops/ms
+                 queryBeers:  0.689 ops/ms
+                 queryBeers2: 0.688 ops/ms
+                 queryBeers3: 0.689 ops/ms
+
+Iteration  29: 2.069 ops/ms
+                 queryBeers:  0.689 ops/ms
+                 queryBeers2: 0.689 ops/ms
+                 queryBeers3: 0.691 ops/ms
+
+Iteration  30: 2.045 ops/ms
+                 queryBeers:  0.681 ops/ms
+                 queryBeers2: 0.681 ops/ms
+                 queryBeers3: 0.683 ops/ms
+
+
+
+Result "com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.mixOper":
+  1.955 ±(99.9%) 0.085 ops/ms [Average]
+  (min, avg, max) = (1.622, 1.955, 2.069), stdev = 0.127
+  CI (99.9%): [1.870, 2.040] (assumes normal distribution)
+
+Secondary result "com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.mixOper:queryBeers":
+  0.652 ±(99.9%) 0.028 ops/ms [Average]
+  (min, avg, max) = (0.540, 0.652, 0.689), stdev = 0.042
+  CI (99.9%): [0.623, 0.680] (assumes normal distribution)
+
+Secondary result "com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.mixOper:queryBeers2":
+  0.651 ±(99.9%) 0.028 ops/ms [Average]
+  (min, avg, max) = (0.542, 0.651, 0.689), stdev = 0.042
+  CI (99.9%): [0.623, 0.680] (assumes normal distribution)
+
+Secondary result "com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.mixOper:queryBeers3":
+  0.652 ±(99.9%) 0.029 ops/ms [Average]
+  (min, avg, max) = (0.540, 0.652, 0.691), stdev = 0.043
+  CI (99.9%): [0.623, 0.680] (assumes normal distribution)
+
+
+# JMH version: 1.21
+# VM version: JDK 1.8.0_201, Java HotSpot(TM) 64-Bit Server VM, 25.201-b09
+# VM invoker: C:\Program Files\Java\jre1.8.0_201\bin\java.exe
+# VM options: -Xms2G -Xmx2G
+# Warmup: 15 iterations, 500 ms each
+# Measurement: 30 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.singleOper
+
+# Run progress: 25.00% complete, ETA 00:12:25
+# Fork: 1 of 1
+# Warmup Iteration   1: ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
+BenchmarkMain setup done.
+0.785 ops/ms
+# Warmup Iteration   2: 1.038 ops/ms
+# Warmup Iteration   3: 1.095 ops/ms
+# Warmup Iteration   4: 1.021 ops/ms
+# Warmup Iteration   5: 1.099 ops/ms
+# Warmup Iteration   6: 1.066 ops/ms
+# Warmup Iteration   7: 0.997 ops/ms
+# Warmup Iteration   8: 0.972 ops/ms
+# Warmup Iteration   9: 1.150 ops/ms
+# Warmup Iteration  10: 1.179 ops/ms
+# Warmup Iteration  11: 1.224 ops/ms
+# Warmup Iteration  12: 1.302 ops/ms
+# Warmup Iteration  13: 1.235 ops/ms
+# Warmup Iteration  14: 1.315 ops/ms
+# Warmup Iteration  15: 1.330 ops/ms
+Iteration   1: 1.325 ops/ms
+Iteration   2: 1.329 ops/ms
+Iteration   3: 1.324 ops/ms
+Iteration   4: 1.403 ops/ms
+Iteration   5: 1.321 ops/ms
+Iteration   6: 1.331 ops/ms
+Iteration   7: 1.312 ops/ms
+Iteration   8: 1.311 ops/ms
+Iteration   9: 1.291 ops/ms
+Iteration  10: 1.315 ops/ms
+Iteration  11: 1.322 ops/ms
+Iteration  12: 1.325 ops/ms
+Iteration  13: 1.322 ops/ms
+Iteration  14: 1.324 ops/ms
+Iteration  15: 1.289 ops/ms
+Iteration  16: 1.327 ops/ms
+Iteration  17: 1.322 ops/ms
+Iteration  18: 1.316 ops/ms
+Iteration  19: 1.322 ops/ms
+Iteration  20: 1.305 ops/ms
+Iteration  21: 1.312 ops/ms
+Iteration  22: 1.316 ops/ms
+Iteration  23: 1.325 ops/ms
+Iteration  24: 1.324 ops/ms
+Iteration  25: 1.311 ops/ms
+Iteration  26: 1.336 ops/ms
+Iteration  27: 1.283 ops/ms
+Iteration  28: 1.325 ops/ms
+Iteration  29: 1.335 ops/ms
+Iteration  30: 1.283 ops/ms
+
+
+Result "com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.singleOper":
+  1.320 ±(99.9%) 0.014 ops/ms [Average]
+  (min, avg, max) = (1.283, 1.320, 1.403), stdev = 0.021
+  CI (99.9%): [1.305, 1.334] (assumes normal distribution)
+
+
+# JMH version: 1.21
+# VM version: JDK 1.8.0_201, Java HotSpot(TM) 64-Bit Server VM, 25.201-b09
+# VM invoker: C:\Program Files\Java\jre1.8.0_201\bin\java.exe
+# VM options: -Xms2G -Xmx2G
+# Warmup: 15 iterations, 500 ms each
+# Measurement: 30 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 3 threads (1 group; 1x "queryBeers", 1x "queryBeers2", 1x "queryBeers3" in each group), will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.mixOper
+
+# Run progress: 50.00% complete, ETA 00:08:16
+# Fork: 1 of 1
+# Warmup Iteration   1: ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
+BenchmarkMain setup done.
+BenchmarkMain setup done.
+BenchmarkMain setup done.
+2.063 ±(99.9%) 0.908 ms/op
+# Warmup Iteration   2: 2.017 ±(99.9%) 0.455 ms/op
+# Warmup Iteration   3: 2.124 ±(99.9%) 0.068 ms/op
+# Warmup Iteration   4: 1.997 ±(99.9%) 0.232 ms/op
+# Warmup Iteration   5: 2.010 ±(99.9%) 0.271 ms/op
+# Warmup Iteration   6: 1.905 ±(99.9%) 0.089 ms/op
+# Warmup Iteration   7: 1.700 ±(99.9%) 0.060 ms/op
+# Warmup Iteration   8: 1.478 ±(99.9%) 0.111 ms/op
+# Warmup Iteration   9: 1.677 ±(99.9%) 0.036 ms/op
+# Warmup Iteration  10: 1.647 ±(99.9%) 0.038 ms/op
+# Warmup Iteration  11: 1.629 ±(99.9%) 0.016 ms/op
+# Warmup Iteration  12: 1.916 ±(99.9%) 0.076 ms/op
+# Warmup Iteration  13: 1.491 ±(99.9%) 0.093 ms/op
+# Warmup Iteration  14: 1.517 ±(99.9%) 0.069 ms/op
+# Warmup Iteration  15: 1.515 ±(99.9%) 0.029 ms/op
+Iteration   1: 1.453 ±(99.9%) 0.023 ms/op
+                 queryBeers:  1.453 ms/op
+                 queryBeers2: 1.454 ms/op
+                 queryBeers3: 1.451 ms/op
+
+Iteration   2: 1.451 ±(99.9%) 0.162 ms/op
+                 queryBeers:  1.442 ms/op
+                 queryBeers2: 1.451 ms/op
+                 queryBeers3: 1.460 ms/op
+
+Iteration   3: 1.469 ±(99.9%) 0.057 ms/op
+                 queryBeers:  1.470 ms/op
+                 queryBeers2: 1.466 ms/op
+                 queryBeers3: 1.472 ms/op
+
+Iteration   4: 1.462 ±(99.9%) 0.032 ms/op
+                 queryBeers:  1.461 ms/op
+                 queryBeers2: 1.464 ms/op
+                 queryBeers3: 1.462 ms/op
+
+Iteration   5: 1.488 ±(99.9%) 0.053 ms/op
+                 queryBeers:  1.485 ms/op
+                 queryBeers2: 1.491 ms/op
+                 queryBeers3: 1.489 ms/op
+
+Iteration   6: 1.450 ±(99.9%) 0.045 ms/op
+                 queryBeers:  1.448 ms/op
+                 queryBeers2: 1.449 ms/op
+                 queryBeers3: 1.453 ms/op
+
+Iteration   7: 1.486 ±(99.9%) 0.015 ms/op
+                 queryBeers:  1.486 ms/op
+                 queryBeers2: 1.487 ms/op
+                 queryBeers3: 1.486 ms/op
+
+Iteration   8: 1.505 ±(99.9%) 0.035 ms/op
+                 queryBeers:  1.507 ms/op
+                 queryBeers2: 1.505 ms/op
+                 queryBeers3: 1.503 ms/op
+
+Iteration   9: 1.465 ±(99.9%) 0.043 ms/op
+                 queryBeers:  1.467 ms/op
+                 queryBeers2: 1.462 ms/op
+                 queryBeers3: 1.466 ms/op
+
+Iteration  10: 1.442 ±(99.9%) 0.042 ms/op
+                 queryBeers:  1.441 ms/op
+                 queryBeers2: 1.441 ms/op
+                 queryBeers3: 1.445 ms/op
+
+Iteration  11: 1.448 ±(99.9%) 0.036 ms/op
+                 queryBeers:  1.450 ms/op
+                 queryBeers2: 1.447 ms/op
+                 queryBeers3: 1.446 ms/op
+
+Iteration  12: 1.466 ±(99.9%) 0.039 ms/op
+                 queryBeers:  1.464 ms/op
+                 queryBeers2: 1.466 ms/op
+                 queryBeers3: 1.468 ms/op
+
+Iteration  13: 1.466 ±(99.9%) 0.007 ms/op
+                 queryBeers:  1.466 ms/op
+                 queryBeers2: 1.465 ms/op
+                 queryBeers3: 1.466 ms/op
+
+Iteration  14: 1.484 ±(99.9%) 0.053 ms/op
+                 queryBeers:  1.481 ms/op
+                 queryBeers2: 1.484 ms/op
+                 queryBeers3: 1.487 ms/op
+
+Iteration  15: 1.524 ±(99.9%) 0.074 ms/op
+                 queryBeers:  1.528 ms/op
+                 queryBeers2: 1.523 ms/op
+                 queryBeers3: 1.520 ms/op
+
+Iteration  16: 1.454 ±(99.9%) 0.023 ms/op
+                 queryBeers:  1.455 ms/op
+                 queryBeers2: 1.453 ms/op
+                 queryBeers3: 1.454 ms/op
+
+Iteration  17: 1.456 ±(99.9%) 0.145 ms/op
+                 queryBeers:  1.452 ms/op
+                 queryBeers2: 1.451 ms/op
+                 queryBeers3: 1.465 ms/op
+
+Iteration  18: 1.493 ±(99.9%) 0.032 ms/op
+                 queryBeers:  1.494 ms/op
+                 queryBeers2: 1.494 ms/op
+                 queryBeers3: 1.491 ms/op
+
+Iteration  19: 1.557 ±(99.9%) 0.027 ms/op
+                 queryBeers:  1.557 ms/op
+                 queryBeers2: 1.556 ms/op
+                 queryBeers3: 1.559 ms/op
+
+Iteration  20: 1.572 ±(99.9%) 0.070 ms/op
+                 queryBeers:  1.575 ms/op
+                 queryBeers2: 1.568 ms/op
+                 queryBeers3: 1.574 ms/op
+
+Iteration  21: 1.612 ±(99.9%) 0.130 ms/op
+                 queryBeers:  1.615 ms/op
+                 queryBeers2: 1.604 ms/op
+                 queryBeers3: 1.617 ms/op
+
+Iteration  22: 1.518 ±(99.9%) 0.040 ms/op
+                 queryBeers:  1.520 ms/op
+                 queryBeers2: 1.519 ms/op
+                 queryBeers3: 1.516 ms/op
+
+Iteration  23: 1.523 ±(99.9%) 0.254 ms/op
+                 queryBeers:  1.539 ms/op
+                 queryBeers2: 1.516 ms/op
+                 queryBeers3: 1.514 ms/op
+
+Iteration  24: 16:43:46.944 [com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.mixOper-jmh-worker-3] ERROR com.my.rpc.runtime.serializer.MsgDeserByMessagePack -  readFloat org.msgpack.core.MessageTypeException: Expected Float, but got Integer (00)
+com.my.rpc.runtime.exception.RPCDeserializeException: org.msgpack.core.MessageTypeException: Expected Float, but got Integer (00)
+	at com.my.rpc.runtime.exception.RPCExceptionFactory.createException(RPCExceptionFactory.java:33)
+	at com.my.rpc.runtime.serializer.MsgDeserByMessagePack.readFloat(MsgDeserByMessagePack.java:61)
+	at com.my.rpc.runtime.builtInMessage.RPCPrimitiveType$RPCFloat.deserialize(RPCPrimitiveType.java:186)
+	at com.my.rpc.testMessage.MessageBeerArray$Beer.deserialize(MessageBeerArray.java:83)
+	at com.my.rpc.testMessage.MessageBeerArray$BeerArray.deserialize(MessageBeerArray.java:119)
+	at com.my.rpc.runtime.runner.RPCClient$1.invoke(RPCClient.java:145)
+	at com.sun.proxy.$Proxy6.queryBeers3(Unknown Source)
+	at com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.queryBeers3(AsymmetricBenchmarkMain.java:150)
+	at com.my.rpc.test.benchmark.generated.AsymmetricBenchmarkMain_mixOper_jmhTest.queryBeers3_avgt_jmhStub(AsymmetricBenchmarkMain_mixOper_jmhTest.java:420)
+	at com.my.rpc.test.benchmark.generated.AsymmetricBenchmarkMain_mixOper_jmhTest.mixOper_AverageTime(AsymmetricBenchmarkMain_mixOper_jmhTest.java:356)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+1.585 ±(99.9%) 0.449 ms/op
+                 queryBeers:  1.574 ms/op
+                 queryBeers2: 1.569 ms/op
+                 queryBeers3: 1.614 ms/op
+
+Iteration  25: 1.573 ±(99.9%) 0.036 ms/op
+                 queryBeers:  1.575 ms/op
+                 queryBeers2: 1.574 ms/op
+                 queryBeers3: 1.571 ms/op
+
+Iteration  26: 1.510 ±(99.9%) 0.025 ms/op
+                 queryBeers:  1.511 ms/op
+                 queryBeers2: 1.508 ms/op
+                 queryBeers3: 1.511 ms/op
+
+Iteration  27: 1.512 ±(99.9%) 0.036 ms/op
+                 queryBeers:  1.513 ms/op
+                 queryBeers2: 1.513 ms/op
+                 queryBeers3: 1.510 ms/op
+
+Iteration  28: 1.525 ±(99.9%) 0.083 ms/op
+                 queryBeers:  1.530 ms/op
+                 queryBeers2: 1.526 ms/op
+                 queryBeers3: 1.521 ms/op
+
+Iteration  29: 1.514 ±(99.9%) 0.058 ms/op
+                 queryBeers:  1.512 ms/op
+                 queryBeers2: 1.518 ms/op
+                 queryBeers3: 1.514 ms/op
+
+Iteration  30: 1.525 ±(99.9%) 0.030 ms/op
+                 queryBeers:  1.524 ms/op
+                 queryBeers2: 1.527 ms/op
+                 queryBeers3: 1.526 ms/op
+
+
+
+Result "com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.mixOper":
+  1.500 ±(99.9%) 0.031 ms/op [Average]
+  (min, avg, max) = (1.442, 1.500, 1.612), stdev = 0.046
+  CI (99.9%): [1.469, 1.530] (assumes normal distribution)
+
+Secondary result "com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.mixOper:queryBeers":
+  1.500 ±(99.9%) 0.031 ms/op [Average]
+  (min, avg, max) = (1.441, 1.500, 1.615), stdev = 0.047
+  CI (99.9%): [1.469, 1.531] (assumes normal distribution)
+
+Secondary result "com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.mixOper:queryBeers2":
+  1.498 ±(99.9%) 0.030 ms/op [Average]
+  (min, avg, max) = (1.441, 1.498, 1.604), stdev = 0.044
+  CI (99.9%): [1.469, 1.528] (assumes normal distribution)
+
+Secondary result "com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.mixOper:queryBeers3":
+  1.501 ±(99.9%) 0.032 ms/op [Average]
+  (min, avg, max) = (1.445, 1.501, 1.617), stdev = 0.047
+  CI (99.9%): [1.469, 1.533] (assumes normal distribution)
+
+
+# JMH version: 1.21
+# VM version: JDK 1.8.0_201, Java HotSpot(TM) 64-Bit Server VM, 25.201-b09
+# VM invoker: C:\Program Files\Java\jre1.8.0_201\bin\java.exe
+# VM options: -Xms2G -Xmx2G
+# Warmup: 15 iterations, 500 ms each
+# Measurement: 30 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.singleOper
+
+# Run progress: 75.00% complete, ETA 00:04:08
+# Fork: 1 of 1
+# Warmup Iteration   1: ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
+BenchmarkMain setup done.
+1.217 ms/op
+# Warmup Iteration   2: 0.976 ms/op
+# Warmup Iteration   3: 1.008 ms/op
+# Warmup Iteration   4: 0.955 ms/op
+# Warmup Iteration   5: 0.923 ms/op
+# Warmup Iteration   6: 0.918 ms/op
+# Warmup Iteration   7: 0.918 ms/op
+# Warmup Iteration   8: 0.907 ms/op
+# Warmup Iteration   9: 0.901 ms/op
+# Warmup Iteration  10: 0.875 ms/op
+# Warmup Iteration  11: 0.827 ms/op
+# Warmup Iteration  12: 0.777 ms/op
+# Warmup Iteration  13: 0.780 ms/op
+# Warmup Iteration  14: 0.768 ms/op
+# Warmup Iteration  15: 0.775 ms/op
+Iteration   1: 0.781 ms/op
+Iteration   2: 0.765 ms/op
+Iteration   3: 0.777 ms/op
+Iteration   4: 0.786 ms/op
+Iteration   5: 0.774 ms/op
+Iteration   6: 0.775 ms/op
+Iteration   7: 0.808 ms/op
+Iteration   8: 0.782 ms/op
+Iteration   9: 0.770 ms/op
+Iteration  10: 0.766 ms/op
+Iteration  11: 0.770 ms/op
+Iteration  12: 0.774 ms/op
+Iteration  13: 0.753 ms/op
+Iteration  14: 0.779 ms/op
+Iteration  15: 0.770 ms/op
+Iteration  16: 0.765 ms/op
+Iteration  17: 0.790 ms/op
+Iteration  18: 0.793 ms/op
+Iteration  19: 0.766 ms/op
+Iteration  20: 0.754 ms/op
+Iteration  21: 0.756 ms/op
+Iteration  22: 0.747 ms/op
+Iteration  23: 0.768 ms/op
+Iteration  24: 0.747 ms/op
+Iteration  25: 0.747 ms/op
+Iteration  26: 0.746 ms/op
+Iteration  27: 0.758 ms/op
+Iteration  28: 0.745 ms/op
+Iteration  29: 0.763 ms/op
+Iteration  30: 0.767 ms/op
+
+
+Result "com.my.rpc.test.benchmark.AsymmetricBenchmarkMain.singleOper":
+  0.768 ±(99.9%) 0.010 ms/op [Average]
+  (min, avg, max) = (0.745, 0.768, 0.808), stdev = 0.015
+  CI (99.9%): [0.758, 0.778] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:16:33
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                     Mode  Cnt  Score   Error   Units
+AsymmetricBenchmarkMain.mixOper              thrpt   30  1.955 ± 0.085  ops/ms
+AsymmetricBenchmarkMain.mixOper:queryBeers   thrpt   30  0.652 ± 0.028  ops/ms
+AsymmetricBenchmarkMain.mixOper:queryBeers2  thrpt   30  0.651 ± 0.028  ops/ms
+AsymmetricBenchmarkMain.mixOper:queryBeers3  thrpt   30  0.652 ± 0.029  ops/ms
+AsymmetricBenchmarkMain.singleOper           thrpt   30  1.320 ± 0.014  ops/ms
+AsymmetricBenchmarkMain.mixOper               avgt   30  1.500 ± 0.031   ms/op
+AsymmetricBenchmarkMain.mixOper:queryBeers    avgt   30  1.500 ± 0.031   ms/op
+AsymmetricBenchmarkMain.mixOper:queryBeers2   avgt   30  1.498 ± 0.030   ms/op
+AsymmetricBenchmarkMain.mixOper:queryBeers3   avgt   30  1.501 ± 0.032   ms/op
+AsymmetricBenchmarkMain.singleOper            avgt   30  0.768 ± 0.010   ms/op
+
+Benchmark result is saved to jmh-result.json
