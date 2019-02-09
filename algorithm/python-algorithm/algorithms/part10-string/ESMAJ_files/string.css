@@ -1,0 +1,76 @@
+
+A {text-decoration: none }
+A:link { color: darkblue }
+A:visited { color: darkblue }
+A:hover {color: darkgreen; text-decoration: underline }
+P A {text-decoration: underline }
+P A:link { color: black }
+P A:visited { color: black }
+P A:hover {color: darkgreen; text-decoration: none }
+P:first-letter {font-size: medium}
+/* DT:first-letter { font-size: medium; } */
+P {margin: 2 6 6 12; }
+DL {margin: 2 6 6 12;}
+DD {margin-left: 18}
+DIV UL {margin-top: 0; margin-right:18; padding-top: 2; padding-bottom: 6}
+/* #F2F2FE */
+H2 {color: teal; background: #E0E0F0; margin-right: 12; margin-bottom : 0; padding-bottom: 0}
+H1 {color: darkslateblue }
+H3 {color: skyblue }
+PRE {margin-top: 0; margin-left: 18;  margin-right: 12 }
+LI {padding-top: 3;}
+.justify {text-align: justify }
+.left {text-align: left }
+.center {text-align: center}
+
+/* #F2F2FE */
+.bar {margin: 20 12 0 2;
+      padding: 2 0 2 5;
+      color: teal; background: #E0E0F0;
+      font-weight: bold; font-size: 1.4em;
+      border-width: 1;
+      border-style: solid;
+      border-color:#F2F2FE; }
+
+.mf {color: navy; background: azure; /* lightskyblue;*/
+      margin: 0 12 6 12;
+      /*      padding: 2 4 5 4; */
+      border: none; }
+
+.desc {color: black; background: floralwhite;
+       margin: 0 12 6 12;
+       padding: 6 4 5 4;
+       border: none; }
+
+.def { color: black; background: antiquewhite;
+       margin: 0 12 6 12;
+       padding: 6 4 5 4;
+       border: none; }
+
+.pre {background:ivory; color: darkred;
+      margin: 0 12 6 12;
+      border: none; }
+
+.ref { color: darkslategray; background: azure;
+       margin: 0 12 6 12;      /* padding: 2 4 5 4;*/
+       border: none; }
+
+
+ /* list-style-position: outside;*/
+ 
+SMALL.TINY		{ font-size : xx-small }
+SMALL.SCRIPTSIZE	{ font-size : xx-small }
+SMALL.FOOTNOTESIZE	{ font-size : x-small  }
+SMALL.SMALL		{ font-size : small    }
+BIG.LARGE		{ font-size : large    }
+BIG.XLARGE		{ font-size : x-large  }
+BIG.XXLARGE		{ font-size : xx-large }
+BIG.HUGE		{ font-size : xx-large }
+BIG.XHUGE		{ font-size : xx-large }
+
+   /*   border-color: teal; 
+           border-width: 3pc;
+           border-top: solid;
+           border-right: solid;
+           border-bottom: solid;
+           border-left: solid;  /*
