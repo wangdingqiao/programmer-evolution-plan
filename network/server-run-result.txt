@@ -131,3 +131,104 @@ conn2 sending 25$^ab0000$abab
 conn2 received 36bc1111
 conn2 disconnecting
 Elapsed time=4441
+
+
+3.block-listener
+
+wangdq@ubuntu:~/eclipse-workspace/blockListener/Debug$ ./blockListener 
+server: got connection from 127.0.0.1 at timeStamp=1549796846397475
+Calling recv at timeStamp=1549796846397498
+recv returned 7 bytes
+Calling recv at timeStamp=1549796849171415
+recv returned 15 bytes
+Calling recv at timeStamp=1549796857508797
+Peer disconnected; I'm done.
+
+
+wangdq@ubuntu:~/eclipse-workspace/serverTest/bin$ telnet localhost 9090
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+Hello
+socket world.
+^]
+telnet> quit
+Connection closed.
+
+4.nonBlock-listener
+
+There's a catch-22 here: the longer we wait between polls, the less responsive the server is; 
+the shorter we wait, the more CPU resources we burn on useless polling.
+
+wangdq@ubuntu:~/eclipse-workspace/nonBlockListener/Debug$ ./nonBlockListener 
+server: got connection from 127.0.0.1 at timeStamp=1549797019768387
+Calling recv at timeStamp=1549797019768401
+Calling recv at timeStamp=1549797019968649
+Calling recv at timeStamp=1549797023383667
+recv returned 7 bytes
+Calling recv at timeStamp=1549797023383711
+Calling recv at timeStamp=1549797023584679
+Calling recv at timeStamp=1549797023785658
+Calling recv at timeStamp=1549797023986631
+Calling recv at timeStamp=1549797024187632
+Calling recv at timeStamp=1549797024388796
+Calling recv at timeStamp=1549797030417711
+recv returned 15 bytes
+Calling recv at timeStamp=1549797030417754
+Calling recv at timeStamp=1549797030618710
+Calling recv at timeStamp=1549797030819700
+Calling recv at timeStamp=1549797034837722
+Calling recv at timeStamp=1549797035038705
+Calling recv at timeStamp=1549797035239686
+Calling recv at timeStamp=1549797035440268
+Peer disconnected; I'm done.
+
+
+wangdq@ubuntu:~/eclipse-workspace/serverTest/bin$ telnet localhost 9090
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+Hello
+socket world.
+^]
+telnet> quit
+Connection closed.
+
+
+5.select-server
+
+wangdq@ubuntu:~/eclipse-workspace/selectServer/Debug$ ./selectServer 
+server: got connection from 127.0.0.1 at timeStamp=1549807807555897
+server: got connection from 127.0.0.1 at timeStamp=1549807807555956
+server: got connection from 127.0.0.1 at timeStamp=1549807807555971
+socket 5 closing
+socket 6 closing
+socket 4 closing
+
+wangdq@ubuntu:~/eclipse-workspace/serverTest/bin$ java com.server.model.test.SimpleClientTest 
+conn2 connected...
+conn0 connected...
+conn1 connected...
+conn2 sending ^abc$de^abte$f
+conn1 sending ^abc$de^abte$f
+conn0 sending ^abc$de^abte$f
+conn2 received bcdbcuf
+conn0 received bcdbcuf
+conn1 received bcdbcuf
+conn2 sending xyz^123
+conn0 sending xyz^123
+conn1 sending xyz^123
+conn1 received 234
+conn0 received 234
+conn2 received 234
+conn0 sending 25$^ab0000$abab
+conn2 sending 25$^ab0000$abab
+conn2 received 36bc1111
+conn1 sending 25$^ab0000$abab
+conn0 received 36bc1111
+conn1 received 36bc1111
+conn2 disconnecting
+conn0 disconnecting
+conn1 disconnecting
+Elapsed time=2251
+
