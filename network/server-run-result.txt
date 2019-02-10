@@ -1,0 +1,133 @@
+运行结果
+1.sequential server
+
+wangdq@ubuntu:~/eclipse-workspace/sequentialServer/Debug$ ./sequentialServer 
+server: got connection from 127.0.0.1 at timeStamp=1549759679
+server: got connection from 127.0.0.1 at timeStamp=1549759681
+server: got connection from 127.0.0.1 at timeStamp=1549759683
+
+wangdq@ubuntu:~/eclipse-workspace/serverTest/bin$ java com.server.model.test.SimpleClientTest 
+conn0 connected...
+conn0 sending ^abc$de^abte$f
+conn0 received b
+conn0 received cdbcuf
+conn0 sending xyz^123
+conn0 received 234
+conn0 sending 25$^ab0000$abab
+conn0 received 36bc1111
+conn0 disconnecting
+conn2 connected...
+conn2 sending ^abc$de^abte$f
+conn2 received b
+conn2 received cdbcuf
+conn2 sending xyz^123
+conn2 received 234
+conn2 sending 25$^ab0000$abab
+conn2 received 36bc1111
+conn2 disconnecting
+conn1 connected...
+conn1 sending ^abc$de^abte$f
+conn1 received b
+conn1 received cdbcuf
+conn1 sending xyz^123
+conn1 received 234
+conn1 sending 25$^ab0000$abab
+conn1 received 36bc1111
+conn1 disconnecting
+Elapsed time=6644
+
+
+
+2.threaded server
+
+
+wangdq@ubuntu:~/eclipse-workspace/threadedServer/Debug$ ./threadedServer 
+server: got connection from 127.0.0.1 at timeStamp=1549759592
+server: got connection from 127.0.0.1 at timeStamp=1549759592
+server: got connection from 127.0.0.1 at timeStamp=1549759592
+Thread 140593178535680 created to handle connection with socket 5
+Thread 140593186928384 created to handle connection with socket 4
+Thread 140593170142976 created to handle connection with socket 6
+Thread 140593186928384 done
+Thread 140593170142976 done
+Thread 140593178535680 done
+
+
+wangdq@ubuntu:~/eclipse-workspace/serverTest/bin$ java com.server.model.test.SimpleClientTest 
+conn2 connected...
+conn1 connected...
+conn0 connected...
+conn2 sending ^abc$de^abte$f
+conn2 received b
+conn0 sending ^abc$de^abte$f
+conn1 sending ^abc$de^abte$f
+conn1 received b
+conn0 received b
+conn2 received cdbcuf
+conn0 received cdbcuf
+conn1 received cdbcuf
+conn2 sending xyz^123
+conn0 sending xyz^123
+conn2 received 234
+conn0 received 234
+conn1 sending xyz^123
+conn1 received 234
+conn0 sending 25$^ab0000$abab
+conn2 sending 25$^ab0000$abab
+conn0 received 36b
+conn2 received 36bc1111
+conn0 received c1111
+conn1 sending 25$^ab0000$abab
+conn1 received 36bc1111
+conn0 disconnecting
+conn2 disconnecting
+conn1 disconnecting
+Elapsed time=2264
+
+
+
+3.thread pool server
+
+
+wangdq@ubuntu:~/eclipse-workspace/threadPoolServer/Debug$ ./threadPoolServer 
+Pool started with 2 threads and queue size of 256
+server: got connection from 127.0.0.1 at timeStamp=1549759441
+server: got connection from 127.0.0.1 at timeStamp=1549759441
+Thread 140203107546880 created to handle connection with socket 4
+Thread 140203099154176 created to handle connection with socket 5
+server: got connection from 127.0.0.1 at timeStamp=1549759441
+Thread 140203107546880 done
+Thread 140203107546880 created to handle connection with socket 6
+Thread 140203099154176 done
+Thread 140203107546880 done
+
+
+wangdq@ubuntu:~/eclipse-workspace/serverTest/bin$ java com.server.model.test.SimpleClientTest 
+conn1 connected...
+conn0 connected...
+conn1 sending ^abc$de^abte$f
+conn0 sending ^abc$de^abte$f
+conn1 received b
+conn0 received b
+conn1 received cdbcuf
+conn0 received cdbcuf
+conn0 sending xyz^123
+conn1 sending xyz^123
+conn0 received 234
+conn1 received 234
+conn0 sending 25$^ab0000$abab
+conn1 sending 25$^ab0000$abab
+conn0 received 36bc1111
+conn1 received 36bc1111
+conn0 disconnecting
+conn1 disconnecting
+conn2 connected...
+conn2 sending ^abc$de^abte$f
+conn2 received b
+conn2 received cdbcuf
+conn2 sending xyz^123
+conn2 received 234
+conn2 sending 25$^ab0000$abab
+conn2 received 36bc1111
+conn2 disconnecting
+Elapsed time=4441
