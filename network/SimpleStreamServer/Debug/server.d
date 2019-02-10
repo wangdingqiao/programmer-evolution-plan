@@ -1,1 +1,0 @@
-server.d: ../server.c

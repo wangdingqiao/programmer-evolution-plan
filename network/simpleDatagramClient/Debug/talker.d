@@ -1,1 +1,0 @@
-talker.d: ../talker.c
