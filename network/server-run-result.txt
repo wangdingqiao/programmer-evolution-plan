@@ -334,3 +334,37 @@ conn0 disconnecting
 conn1 disconnecting
 conn2 disconnecting
 Elapsed time=2235
+
+8. libuv server
+
+wangdq@ubuntu:~/eclipse-workspace/libuv-server/Debug$ ./libuv-server 
+server: got connection from 127.0.0.1 at timeStamp=1549887657275936
+server: got connection from 127.0.0.1 at timeStamp=1549887657275978
+server: got connection from 127.0.0.1 at timeStamp=1549887657276067
+
+wangdq@ubuntu:~/eclipse-workspace/serverTest/bin$ java com.server.model.test.SimpleClientTest 
+conn2 connected...
+conn1 connected...
+conn0 connected...
+conn2 sending ^abc$de^abte$f
+conn0 sending ^abc$de^abte$f
+conn1 sending ^abc$de^abte$f
+conn2 received bcdbcuf
+conn0 received bcdbcuf
+conn1 received bcdbcuf
+conn0 sending xyz^123
+conn1 sending xyz^123
+conn0 received 234
+conn2 sending xyz^123
+conn1 received 234
+conn2 received 234
+conn1 sending 25$^ab0000$abab
+conn0 sending 25$^ab0000$abab
+conn1 received 36bc1111
+conn2 sending 25$^ab0000$abab
+conn0 received 36bc1111
+conn2 received 36bc1111
+conn1 disconnecting
+conn0 disconnecting
+conn2 disconnecting
+Elapsed time=2389
