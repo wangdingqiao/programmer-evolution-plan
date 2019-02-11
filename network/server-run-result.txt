@@ -1,3 +1,5 @@
+example refer from:http://eli.thegreenplace.net/2017/concurrent-servers-part-1-introduction/
+
 运行结果
 1.sequential server
 
@@ -232,3 +234,103 @@ conn0 disconnecting
 conn1 disconnecting
 Elapsed time=2251
 
+
+6.poll server
+
+wangdq@ubuntu:~/eclipse-workspace/pollServer/Debug$ ./pollServer 
+Waiting on poll()...
+server: got connection from 127.0.0.1 at timeStamp=1549869247945237
+Waiting on poll()...
+server: got connection from 127.0.0.1 at timeStamp=1549869247945383
+Waiting on poll()...
+server: got connection from 127.0.0.1 at timeStamp=1549869247945511
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+Waiting on poll()...
+socket 4 closing
+Waiting on poll()...
+socket 6 closing
+Waiting on poll()...
+socket 5 closing
+Waiting on poll()...
+
+wangdq@ubuntu:~/eclipse-workspace/serverTest/bin$ java com.server.model.test.SimpleClientTest 
+conn2 connected...
+conn1 connected...
+conn0 connected...
+conn2 sending ^abc$de^abte$f
+conn0 sending ^abc$de^abte$f
+conn0 received bcdbcuf
+conn1 sending ^abc$de^abte$f
+conn2 received bcdbcuf
+conn1 received bcdbcuf
+conn2 sending xyz^123
+conn1 sending xyz^123
+conn0 sending xyz^123
+conn1 received 234
+conn0 received 234
+conn2 received 234
+conn1 sending 25$^ab0000$abab
+conn0 sending 25$^ab0000$abab
+conn0 received 36bc1111
+conn1 received 36bc1111
+conn2 sending 25$^ab0000$abab
+conn2 received 36bc1111
+conn1 disconnecting
+conn0 disconnecting
+conn2 disconnecting
+Elapsed time=2257
+
+7.epoll server
+
+wangdq@ubuntu:~/eclipse-workspace/epollServer/Debug$ ./epollServer 
+server: got connection from 127.0.0.1 at timeStamp=1549871135262350
+server: got connection from 127.0.0.1 at timeStamp=1549871135262406
+server: got connection from 127.0.0.1 at timeStamp=1549871135262473
+socket 6 closing
+socket 7 closing
+socket 5 closing
+
+wangdq@ubuntu:~/eclipse-workspace/serverTest/bin$ java com.server.model.test.SimpleClientTest 
+conn0 connected...
+conn2 connected...
+conn1 connected...
+conn0 sending ^abc$de^abte$f
+conn1 sending ^abc$de^abte$f
+conn2 sending ^abc$de^abte$f
+conn2 received bcdbcuf
+conn0 received bcdbcuf
+conn1 received bcdbcuf
+conn0 sending xyz^123
+conn2 sending xyz^123
+conn1 sending xyz^123
+conn2 received 234
+conn0 received 234
+conn1 received 234
+conn2 sending 25$^ab0000$abab
+conn0 sending 25$^ab0000$abab
+conn1 sending 25$^ab0000$abab
+conn2 received 36bc1111
+conn1 received 36bc1111
+conn0 received 36bc1111
+conn0 disconnecting
+conn1 disconnecting
+conn2 disconnecting
+Elapsed time=2235
