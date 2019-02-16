@@ -1,0 +1,100 @@
+# JMH version: 1.21
+# VM version: JDK 1.8.0_191, Java HotSpot(TM) 64-Bit Server VM, 25.191-b12
+# VM invoker: C:\Program Files\Java\jdk1.8.0_191\jre\bin\java.exe
+# VM options: -Xms2G -Xmx2G
+# Warmup: 15 iterations, 50 ms each
+# Measurement: 30 iterations, 50 ms each
+# Timeout: 10 min per iteration
+# Threads: 8 threads, will synchronize iterations
+
+1.未采用回调机制时
+
+sequential:
+
+Benchmark                                Mode  Cnt  Score   Error   Units
+BenchmarkMain.queryBeers_more_thread    thrpt   60  1.464 ± 0.087  ops/ms
+BenchmarkMain.queryBeers_single_thread  thrpt   60  1.088 ± 0.047  ops/ms
+BenchmarkMain.queryBeers_more_thread     avgt   60  5.148 ± 0.135   ms/op
+BenchmarkMain.queryBeers_single_thread   avgt   60  0.886 ± 0.044   ms/op
+
+
+multiThread:
+
+Benchmark                                Mode  Cnt  Score   Error   Units
+BenchmarkMain.queryBeers_more_thread    thrpt   60  1.357 ± 0.065  ops/ms
+BenchmarkMain.queryBeers_single_thread  thrpt   60  0.935 ± 0.037  ops/ms
+BenchmarkMain.queryBeers_more_thread     avgt   60  5.601 ± 0.406   ms/op
+BenchmarkMain.queryBeers_single_thread   avgt   60  1.097 ± 0.060   ms/op
+
+
+
+thread-pool:
+
+Benchmark                                Mode  Cnt  Score   Error   Units
+BenchmarkMain.queryBeers_more_thread    thrpt   60  1.545 ± 0.040  ops/ms
+BenchmarkMain.queryBeers_single_thread  thrpt   60  1.118 ± 0.048  ops/ms
+BenchmarkMain.queryBeers_more_thread     avgt   60  4.930 ± 0.240   ms/op
+BenchmarkMain.queryBeers_single_thread   avgt   60  0.921 ± 0.056   ms/op
+
+
+
+selector:
+Benchmark                                Mode  Cnt  Score   Error   Units
+BenchmarkMain.queryBeers_more_thread    thrpt   60  1.435 ± 0.085  ops/ms
+BenchmarkMain.queryBeers_single_thread  thrpt   60  1.062 ± 0.049  ops/ms
+BenchmarkMain.queryBeers_more_thread     avgt   60  5.869 ± 0.252   ms/op
+BenchmarkMain.queryBeers_single_thread   avgt   60  0.929 ± 0.052   ms/op
+
+
+
+asynchronous
+Benchmark                                Mode  Cnt  Score   Error   Units
+BenchmarkMain.queryBeers_more_thread    thrpt   60  0.937 ± 0.049  ops/ms
+BenchmarkMain.queryBeers_single_thread  thrpt   60  0.664 ± 0.027  ops/ms
+BenchmarkMain.queryBeers_more_thread     avgt   60  7.634 ± 0.309   ms/op
+BenchmarkMain.queryBeers_single_thread   avgt   60  1.474 ± 0.034   ms/op
+
+
+
+Netty.
+
+Benchmark                                Mode  Cnt  Score   Error   Units
+BenchmarkMain.queryBeers_more_thread    thrpt   60  1.821 ± 0.088  ops/ms
+BenchmarkMain.queryBeers_single_thread  thrpt   60  1.021 ± 0.040  ops/ms
+BenchmarkMain.queryBeers_more_thread     avgt   60  4.866 ± 0.267   ms/op
+BenchmarkMain.queryBeers_single_thread   avgt   60  1.004 ± 0.048   ms/op
+
+
+2.采用回调机制 + 锁等待
+
+asynchronous
+Benchmark                                Mode  Cnt  Score   Error   Units
+BenchmarkMain.queryBeers_more_thread    thrpt   60  0.898 ± 0.050  ops/ms
+BenchmarkMain.queryBeers_single_thread  thrpt   60  0.620 ± 0.033  ops/ms
+BenchmarkMain.queryBeers_more_thread     avgt   60  7.349 ± 0.322   ms/op
+BenchmarkMain.queryBeers_single_thread   avgt   60  1.486 ± 0.068   ms/op
+
+netty
+Benchmark                                Mode  Cnt  Score   Error   Units
+BenchmarkMain.queryBeers_more_thread    thrpt   60  1.367 ± 0.101  ops/ms
+BenchmarkMain.queryBeers_single_thread  thrpt   60  0.951 ± 0.053  ops/ms
+BenchmarkMain.queryBeers_more_thread     avgt   60  4.886 ± 0.288   ms/op
+BenchmarkMain.queryBeers_single_thread   avgt   60  1.061 ± 0.075   ms/op
+
+
+
+3.采用回调机制 + 取消锁等待
+asychronous
+Benchmark                                Mode  Cnt   Score   Error   Units
+BenchmarkMain.queryBeers_more_thread    thrpt   60  16.909 ± 3.494  ops/ms
+BenchmarkMain.queryBeers_single_thread  thrpt   60   1.236 ± 0.201  ops/ms
+BenchmarkMain.queryBeers_more_thread     avgt   60   0.992 ± 0.537   ms/op
+BenchmarkMain.queryBeers_single_thread   avgt   60   1.049 ± 0.202   ms/op
+
+
+netty
+Benchmark                                Mode  Cnt   Score    Error   Units
+BenchmarkMain.queryBeers_more_thread    thrpt   60  51.251 ± 11.995  ops/ms
+BenchmarkMain.queryBeers_single_thread  thrpt   60   1.698 ±  0.097  ops/ms
+BenchmarkMain.queryBeers_more_thread     avgt   60   2.000 ±  3.456   ms/op
+BenchmarkMain.queryBeers_single_thread   avgt   60   0.593 ±  0.043   ms/op

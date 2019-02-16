@@ -1,0 +1,59 @@
+package com.my.rpc.runtime.builtInMessage;
+
+messageBlock RPCCommonMessage
+{
+	message SeqString
+	{
+		seq<string> elements;
+	};
+	
+	message SeqInt
+	{
+		seq<int> elements;
+	};
+	
+	message SeqShort
+	{
+		seq<short> elements;
+	};
+	
+	message SeqLong
+	{
+		seq<long> elements;
+	};
+	
+	message SeqFloat
+	{
+		seq<float> elements;
+	};
+	
+	message SeqDouble
+	{
+		seq<double> elements;
+	};
+	
+	message SeqDate
+	{
+		seq<date> elements;
+	};
+	
+	message SeqBool
+	{
+		seq<bool> elements;
+	};
+	
+	message MapStrInt
+	{
+		map<string, int> str2Int;
+	};
+	
+	message MapStrStr
+	{
+		map<string, string> str2Str;
+	};
+	
+	message MapStrFloat
+	{
+		map<string, float> str2Float;
+	};
+};

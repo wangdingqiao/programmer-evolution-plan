@@ -1,28 +1,28 @@
 using stub:
 
 Benchmark                                     Mode  Cnt  Score   Error   Units
-AsymmetricBenchmarkMain.mixOper              thrpt   30  2.038 ± 0.041  ops/ms
-AsymmetricBenchmarkMain.mixOper:queryBeers   thrpt   30  0.678 ± 0.014  ops/ms
-AsymmetricBenchmarkMain.mixOper:queryBeers2  thrpt   30  0.680 ± 0.014  ops/ms
-AsymmetricBenchmarkMain.mixOper:queryBeers3  thrpt   30  0.680 ± 0.014  ops/ms
-AsymmetricBenchmarkMain.singleOper           thrpt   30  1.298 ± 0.038  ops/ms
-AsymmetricBenchmarkMain.mixOper               avgt   30  1.495 ± 0.039   ms/op
-AsymmetricBenchmarkMain.mixOper:queryBeers    avgt   30  1.494 ± 0.038   ms/op
-AsymmetricBenchmarkMain.mixOper:queryBeers2   avgt   30  1.494 ± 0.040   ms/op
-AsymmetricBenchmarkMain.mixOper:queryBeers3   avgt   30  1.496 ± 0.040   ms/op
-AsymmetricBenchmarkMain.singleOper            avgt   30  0.782 ± 0.081   ms/op
+AsymmetricBenchmarkMain.mixOper              thrpt   60  1.415 ± 0.104  ops/ms
+AsymmetricBenchmarkMain.mixOper:queryBeers   thrpt   60  0.469 ± 0.035  ops/ms
+AsymmetricBenchmarkMain.mixOper:queryBeers2  thrpt   60  0.473 ± 0.035  ops/ms
+AsymmetricBenchmarkMain.mixOper:queryBeers3  thrpt   60  0.473 ± 0.035  ops/ms
+AsymmetricBenchmarkMain.singleOper           thrpt   60  1.463 ± 0.060  ops/ms
+AsymmetricBenchmarkMain.mixOper               avgt   60  3.998 ± 0.135   ms/op
+AsymmetricBenchmarkMain.mixOper:queryBeers    avgt   60  4.077 ± 0.269   ms/op
+AsymmetricBenchmarkMain.mixOper:queryBeers2   avgt   60  3.950 ± 0.113   ms/op
+AsymmetricBenchmarkMain.mixOper:queryBeers3   avgt   60  3.967 ± 0.128   ms/op
+AsymmetricBenchmarkMain.singleOper            avgt   60  1.368 ± 0.055   ms/op
 
 
 using reflection:
 
 Benchmark                                     Mode  Cnt  Score   Error   Units
-AsymmetricBenchmarkMain.mixOper              thrpt   30  1.955 ± 0.085  ops/ms
-AsymmetricBenchmarkMain.mixOper:queryBeers   thrpt   30  0.652 ± 0.028  ops/ms
-AsymmetricBenchmarkMain.mixOper:queryBeers2  thrpt   30  0.651 ± 0.028  ops/ms
-AsymmetricBenchmarkMain.mixOper:queryBeers3  thrpt   30  0.652 ± 0.029  ops/ms
-AsymmetricBenchmarkMain.singleOper           thrpt   30  1.320 ± 0.014  ops/ms
-AsymmetricBenchmarkMain.mixOper               avgt   30  1.500 ± 0.031   ms/op
-AsymmetricBenchmarkMain.mixOper:queryBeers    avgt   30  1.500 ± 0.031   ms/op
-AsymmetricBenchmarkMain.mixOper:queryBeers2   avgt   30  1.498 ± 0.030   ms/op
-AsymmetricBenchmarkMain.mixOper:queryBeers3   avgt   30  1.501 ± 0.032   ms/op
-AsymmetricBenchmarkMain.singleOper            avgt   30  0.768 ± 0.010   ms/op
+AsymmetricBenchmarkMain.mixOper              thrpt   60  1.397 ± 0.102  ops/ms
+AsymmetricBenchmarkMain.mixOper:queryBeers   thrpt   60  0.466 ± 0.035  ops/ms
+AsymmetricBenchmarkMain.mixOper:queryBeers2  thrpt   60  0.464 ± 0.035  ops/ms
+AsymmetricBenchmarkMain.mixOper:queryBeers3  thrpt   60  0.467 ± 0.034  ops/ms
+AsymmetricBenchmarkMain.singleOper           thrpt   60  1.452 ± 0.053  ops/ms
+AsymmetricBenchmarkMain.mixOper               avgt   60  4.025 ± 0.122   ms/op
+AsymmetricBenchmarkMain.mixOper:queryBeers    avgt   60  4.022 ± 0.135   ms/op
+AsymmetricBenchmarkMain.mixOper:queryBeers2   avgt   60  4.030 ± 0.135   ms/op
+AsymmetricBenchmarkMain.mixOper:queryBeers3   avgt   60  4.023 ± 0.120   ms/op
+AsymmetricBenchmarkMain.singleOper            avgt   60  1.362 ± 0.049   ms/op

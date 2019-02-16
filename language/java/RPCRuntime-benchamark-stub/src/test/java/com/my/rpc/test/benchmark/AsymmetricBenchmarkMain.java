@@ -39,17 +39,17 @@ import com.my.rpc.testMessage.MessageBeerArray.BeerArray;
 
 @BenchmarkMode({Mode.Throughput, Mode.AverageTime})
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
-@Fork(value = 1, jvmArgs = {"-Xms2G", "-Xmx2G"})
-@State(Scope.Thread)
-@Warmup(iterations = 15, time = 500, timeUnit = TimeUnit.MILLISECONDS)
-@Measurement(iterations = 30, time = 500, timeUnit = TimeUnit.MILLISECONDS)
+@Fork(value = 2, jvmArgs = {"-Xms2G", "-Xmx2G"})
+@State(Scope.Benchmark)
+@Warmup(iterations = 15, time = 50, timeUnit = TimeUnit.MILLISECONDS)
+@Measurement(iterations = 30, time = 50, timeUnit = TimeUnit.MILLISECONDS)
 public class AsymmetricBenchmarkMain
 {
 	public static void main(String[] args) throws RunnerException {
 
         Options opt = new OptionsBuilder()
                 .include(AsymmetricBenchmarkMain.class.getSimpleName())
-                .resultFormat(ResultFormatType.JSON)
+                .resultFormat(ResultFormatType.TEXT)
                 .build();
 
         new Runner(opt).run();
@@ -86,15 +86,15 @@ public class AsymmetricBenchmarkMain
 	    System.out.println("BenchmarkMain setup done.");
     }
 	
-	@TearDown(Level.Iteration)
+	@TearDown(Level.Trial)
 	public void tearDown() throws InterruptedException {
-//		System.out.println("wait a few seconds for next benchmark");
+		System.out.println("wait a few seconds for next benchmark");
 	    Thread.sleep(5000);
 	}
 	
 	@Benchmark
     @Group("singleOper")
-    @GroupThreads(1)
+    @GroupThreads(2)
     public void queryBeers_single(Blackhole bh) {
 		try
 		{
@@ -112,7 +112,7 @@ public class AsymmetricBenchmarkMain
 	
     @Benchmark
     @Group("mixOper")
-    @GroupThreads(1)
+    @GroupThreads(2)
     public void queryBeers(Blackhole bh) {
 		try
 		{
@@ -128,7 +128,7 @@ public class AsymmetricBenchmarkMain
     
     @Benchmark
     @Group("mixOper")
-    @GroupThreads(1)
+    @GroupThreads(2)
     public void queryBeers2(Blackhole bh) {
 		try
 		{
@@ -144,7 +144,7 @@ public class AsymmetricBenchmarkMain
     
     @Benchmark
     @Group("mixOper")
-    @GroupThreads(1)
+    @GroupThreads(2)
     public void queryBeers3(Blackhole bh) {
 		try
 		{

@@ -1,0 +1,11 @@
+Benchmark                                     Mode  Cnt  Score   Error   Units
+AsymmetricBenchmarkMain.mixOper              thrpt   60  1.415 ± 0.104  ops/ms
+AsymmetricBenchmarkMain.mixOper:queryBeers   thrpt   60  0.469 ± 0.035  ops/ms
+AsymmetricBenchmarkMain.mixOper:queryBeers2  thrpt   60  0.473 ± 0.035  ops/ms
+AsymmetricBenchmarkMain.mixOper:queryBeers3  thrpt   60  0.473 ± 0.035  ops/ms
+AsymmetricBenchmarkMain.singleOper           thrpt   60  1.463 ± 0.060  ops/ms
+AsymmetricBenchmarkMain.mixOper               avgt   60  3.998 ± 0.135   ms/op
+AsymmetricBenchmarkMain.mixOper:queryBeers    avgt   60  4.077 ± 0.269   ms/op
+AsymmetricBenchmarkMain.mixOper:queryBeers2   avgt   60  3.950 ± 0.113   ms/op
+AsymmetricBenchmarkMain.mixOper:queryBeers3   avgt   60  3.967 ± 0.128   ms/op
+AsymmetricBenchmarkMain.singleOper            avgt   60  1.368 ± 0.055   ms/op

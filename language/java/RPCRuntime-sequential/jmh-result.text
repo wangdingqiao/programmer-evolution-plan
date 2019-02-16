@@ -1,0 +1,5 @@
+Benchmark                                Mode  Cnt  Score   Error   Units
+BenchmarkMain.queryBeers_more_thread    thrpt   60  1.464 ± 0.087  ops/ms
+BenchmarkMain.queryBeers_single_thread  thrpt   60  1.088 ± 0.047  ops/ms
+BenchmarkMain.queryBeers_more_thread     avgt   60  5.148 ± 0.135   ms/op
+BenchmarkMain.queryBeers_single_thread   avgt   60  0.886 ± 0.044   ms/op

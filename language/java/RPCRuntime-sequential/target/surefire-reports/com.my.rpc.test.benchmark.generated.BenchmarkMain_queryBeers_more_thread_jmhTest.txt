@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.my.rpc.test.benchmark.generated.BenchmarkMain_queryBeers_more_thread_jmhTest
+-------------------------------------------------------------------------------
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
